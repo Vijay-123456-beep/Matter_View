@@ -191,11 +191,13 @@ export default function CrystalViewer({ structure, visibility, elementVisibility
         <directionalLight position={[10, 10, 5]} intensity={0.8} />
         <pointLight position={[-10, -10, -5]} intensity={0.4} />
         
-        <CrystalStructure 
-          structure={structure}
-          visibility={visibility}
-          elementVisibility={elementVisibility}
-        />
+        <group position={[0, 0, 0]}>
+          <CrystalStructure 
+            structure={structure}
+            visibility={visibility}
+            elementVisibility={elementVisibility}
+          />
+        </group>
         
         <OrbitControls 
           enablePan={true}
@@ -204,6 +206,7 @@ export default function CrystalViewer({ structure, visibility, elementVisibility
           zoomSpeed={1.2}
           panSpeed={0.8}
           rotateSpeed={0.5}
+          target={[0, 0, 0]}
         />
         
         <gridHelper args={[20, 20]} position={[0, -5, 0]} />
